@@ -20,9 +20,7 @@ import com.longevida.service.UsuarioService;
 @CrossOrigin("*")
 public class UsuarioController {
 
-	/*
-	 * @Autowired private UsuarioRepository repository;
-	 */
+	
 
 	
 	@Autowired
