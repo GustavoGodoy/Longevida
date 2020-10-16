@@ -29,39 +29,39 @@ public class Usuario {
 	
 	@Column(name="nome_usuario")
 	@NotNull
-	private String nomeUsuario;
+	private String nome;
 	
 	@Column(name="email_usuario")
 	@NotNull
-	private String emailUsuario;
+	private String email;
 	
 	@Column(name="sexo_usuario")
 	@NotNull
 	@Size(min =1, max =20)
-	private String sexoUsuario;
+	private String sexo;
 	
 	@Column(name="telefone_usuario")
 	@NotNull
 	@Size(min =1, max =20)
-	private String telefoneUsuario;
+	private String telefone;
 	
 	@Column(name="cpf_usuario")
 	@NotNull
-	@Size(min =1, max =11)
-	private long cpfUsuario;
+	private Long cpf;
 	
 	@Column(name="login_usuario")
 	@NotNull
 	@Size(min =5, max =110)
-	private String loginUsuario;
+	private String usuario;
 	
 	@Column(name="senha_usuario")
 	@NotNull
 	@Size(min =8)
-	private String senhaUsuario;
+	private String senha;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data_usuario = new java.sql.Date(System.currentTimeMillis());
+	
 	
 	@OneToMany(mappedBy ="usuario",cascade=CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -74,7 +74,7 @@ public class Usuario {
 
 	public void setPagamentos(List<Pagamento> pagamentos) {
 		this.pagamentos = pagamentos;
-	}
+	} 
 
 	public long getId() {
 		return id;
@@ -84,60 +84,60 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getEmailUsuario() {
-		return emailUsuario;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmailUsuario(String emailUsuario) {
-		this.emailUsuario = emailUsuario;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getSexoUsuario() {
-		return sexoUsuario;
+	public String getSexo() {
+		return sexo;
 	}
 
-	public void setSexoUsuario(String sexoUsuario) {
-		this.sexoUsuario = sexoUsuario;
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
 	}
 
-	public String getTelefoneUsuario() {
-		return telefoneUsuario;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setTelefoneUsuario(String telefoneUsuario) {
-		this.telefoneUsuario = telefoneUsuario;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
-	public long getCpfUsuario() {
-		return cpfUsuario;
+	public Long getCpf() {
+		return cpf;
 	}
 
-	public void setCpfUsuario(long cpfUsuario) {
-		this.cpfUsuario = cpfUsuario;
+	public void setCpf(Long cpf) {
+		this.cpf = cpf;
 	}
 
-	public String getLoginUsuario() {
-		return loginUsuario;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setLoginUsuario(String loginUsuario) {
-		this.loginUsuario = loginUsuario;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
-	public String getSenhaUsuario() {
-		return senhaUsuario;
+	public String getSenha() {
+		return senha;
 	}
 
-	public void setSenhaUsuario(String senhaUsuario) {
-		this.senhaUsuario = senhaUsuario;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public Date getData_usuario() {
@@ -148,7 +148,4 @@ public class Usuario {
 		this.data_usuario = data_usuario;
 	}
 
-
-	
 }
-
