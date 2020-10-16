@@ -1,6 +1,7 @@
 package com.longevida.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,5 +12,10 @@ import com.longevida.model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
 	public List<Usuario> findAllByNomeUsuarioIgnoreCaseContaining(String usuario);
+
+	public Optional<Usuario> findByNomeUsuario(String nomeUsuario);
+
+	
+	
 
 }
