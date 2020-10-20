@@ -1,15 +1,11 @@
 package com.longevida.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,35 +13,31 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="tb_produtos")
+@Table(name = "tb_produtos")
 public class Produtos {
 
 	@Id
-	@Column(name="id_produto")
+	@Column(name = "id_produto")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(name="name_produto")
+	@Column(name = "name_produto")
 	@NotNull
 	private String nameProduto;
 
-	@Column(name="quantidade_produto")
+	@Column(name = "quantidade_produto")
 	private int quantidadeProduto;
 
-	@Column(name="descricao_produto")
+	@Column(name = "descricao_produto")
 	@Size(min = 5, max = 500)
 	private String descricaoProduto;
 
-	@Column(name="preco_produto")
+	@Column(name = "preco_produto")
 	private double precoProduto;
 
 	@ManyToOne
 	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
-	
-	@OneToMany(mappedBy ="produto",cascade=CascadeType.ALL)
-	@JsonIgnoreProperties("produto")
-	private List<Pagamento> pagamentos;
 
 	public long getId() {
 		return id;
@@ -94,15 +86,5 @@ public class Produtos {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-
-	public List<Pagamento> getPagamentos() {
-		return pagamentos;
-	}
-
-	public void setPagamentos(List<Pagamento> pagamentos) {
-		this.pagamentos = pagamentos;
-	}
-
-	
 
 }

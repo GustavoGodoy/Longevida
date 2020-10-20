@@ -1,80 +1,61 @@
 package com.longevida.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table
 public class Usuario {
 
 	@Id
-	@Column(name="id_usuario")
+	@Column(name = "id_usuario")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name="nome_usuario")
+
+	@Column(name = "nome_usuario")
 	@NotNull
 	private String nome;
-	
-	@Column(name="email_usuario")
+
+	@Column(name = "email_usuario")
 	@NotNull
 	private String email;
-	
-	@Column(name="sexo_usuario")
+
+	@Column(name = "sexo_usuario")
 	@NotNull
-	@Size(min =1, max =20)
+	@Size(min = 1, max = 20)
 	private String sexo;
-	
-	@Column(name="telefone_usuario")
+
+	@Column(name = "telefone_usuario")
 	@NotNull
-	@Size(min =1, max =20)
+	@Size(min = 1, max = 20)
 	private String telefone;
-	
-	@Column(name="cpf_usuario")
+
+	@Column(name = "cpf_usuario")
 	@NotNull
 	private Long cpf;
-	
-	@Column(name="login_usuario")
+
+	@Column(name = "login_usuario")
 	@NotNull
-	@Size(min =5, max =110)
+	@Size(min = 5, max = 110)
 	private String usuario;
-	
-	@Column(name="senha_usuario")
+
+	@Column(name = "senha_usuario")
 	@NotNull
-	@Size(min =8)
+	@Size(min = 8)
 	private String senha;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data_usuario = new java.sql.Date(System.currentTimeMillis());
-	
-	
-	@OneToMany(mappedBy ="usuario",cascade=CascadeType.ALL)
-	@JsonIgnoreProperties("usuario")
-	private List<Pagamento> pagamentos;
-
-
-	public List<Pagamento> getPagamentos() {
-		return pagamentos;
-	}
-
-	public void setPagamentos(List<Pagamento> pagamentos) {
-		this.pagamentos = pagamentos;
-	} 
 
 	public long getId() {
 		return id;
