@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Longevida"
+    }
+  },
+  "defaultProject": "Longevida",
+  "cli": {
+    "analytics": "58ecb189-7f7a-421c-b18b-df2cb2ff3c80"
+  }
 }

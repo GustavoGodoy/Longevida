@@ -1,0 +1,7 @@
+
+.sombra{
+    -webkit-box-shadow: 18px 15px 46px -22px rgba(0,0,0,0.75);
+-moz-box-shadow: 18px 15px 46px -22px rgba(0,0,0,0.75);
+box-shadow: 18px 15px 46px -22px rgba(0,0,0,0.75);
+margin-bottom: 10%;
+}
