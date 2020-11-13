@@ -45,7 +45,7 @@ public class CategoriaController {
 	public ResponseEntity<Categoria> post (@RequestBody Categoria categoria){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(categoria));
 	}
-	
+	/*ALTERAÇÃO FEITA*/
 	@PutMapping("/{id}")
 	public ResponseEntity<Categoria> put (@RequestBody Categoria categoria){
 		return ResponseEntity.ok(repository.save(categoria));
